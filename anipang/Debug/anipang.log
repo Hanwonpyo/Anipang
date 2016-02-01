@@ -1,0 +1,26 @@
+﻿Build started 2016-02-01 오후 4:16:46.
+     1>Project "C:\Users\한원표\Documents\Visual Studio 2013\Projects\anipang\anipang\anipang.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ArrayManager.cpp main.cpp makeRandomShape.cpp
+         main.cpp
+     1>c:\users\한원표\documents\visual studio 2013\projects\anipang\anipang\main.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         ArrayManager.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         makeRandomShape.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\한원표\Documents\Visual Studio 2013\Projects\anipang\Debug\anipang.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\한원표\Documents\Visual Studio 2013\Projects\anipang\Debug\anipang.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\한원표\Documents\Visual Studio 2013\Projects\anipang\Debug\anipang.lib" /MACHINE:X86 Debug\inf_int.obj
+         Debug\Animal.obj
+         Debug\ArrayManager.obj
+         Debug\BlockShift.obj
+         Debug\deleteBlock.obj
+         Debug\main.obj
+         Debug\makeRandomShape.obj
+         Debug\patternChecker.obj
+     1>ArrayManager.obj : error LNK2001: unresolved external symbol "private: static char (* ArrayManager::array)[100]" (?array@ArrayManager@@0PAY0GE@DA)
+     1>C:\Users\한원표\Documents\Visual Studio 2013\Projects\anipang\Debug\anipang.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "C:\Users\한원표\Documents\Visual Studio 2013\Projects\anipang\anipang\anipang.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:04.88
