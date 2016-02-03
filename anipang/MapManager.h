@@ -1,24 +1,30 @@
+#ifndef MapManager_H
+#define MapManager_H
 
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include "makeRandomShape.h"
+#include "patternChecker.h"
+#include "Block.h"
+#include <vector>
 using namespace std;
-#pragma warning(disable:4996)
 
 class MapManager {
 
 private:
 	char map[10][10];
-	static MapManager *mapManager;
+	static MapManager* MapManager::mapManager;
 public:
 	MapManager(void);
-	MapManager* GetInstance();
+	static MapManager* GetInstance();
 	void FreeInstance();
-	void deleteBlock(int x, int y);
+	void deleteBlock(vector<Block> vec_delete);
 	void swapBlock(int x1, int y1, int x2, int y2);
 	void fillMap(int x, int y);
+	void shiftBlock();
+	bool hasEmptyBlock();
 	char getmapValue(int x, int y);
-	char getMap();
+	char* getMap();
+	void printMap();
+	void makeMap();
 	
 };
-MapManager* MapManager::mapManager = 0;
+#endif

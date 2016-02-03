@@ -7,5 +7,5 @@ class DeleteBlock {
 private:
 	vector<Block> vec_delete;
 public:
-	DeleteBlock(vector vec_delete);
+	DeleteBlock(vector<Block> vec_delete);
 };

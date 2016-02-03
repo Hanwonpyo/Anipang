@@ -1,47 +1,81 @@
 #include "patternChecker.h"
-#include "MapManager.h"
 
-patternChecker::patternChecker()
-{
-	this->x = 0;
-	this->y = 0;
-	this->shape = ' ';
-}
-patternChecker::patternChecker(int x, int y, int shape)
+bool patternChecker::checkPang(int x,int y,char shape)
 {
 	this->x = x;
 	this->y = y;
 	this->shape = shape;
-}
-void patternChecker::checkUp()
-{
-	for (int i = y; i >= 0; i--) {
-		if (MapManager::GetInstance()->getmapValue(x , i)==shape) {
-			vec_delete.insert(new Block(x, y, shape));
-		}
+	this->check = false;
+
+	if (this->checkUp() || this->checkRight() || this->checkLeft() || this->checkDown()) {
+		vec_delete.push_back(Block(x, y, shape));
+		this->check = true;
 	}
+	if (this->check == true)
+		return true;
+	return false;
 }
-void patternChecker::checkRight()
+bool patternChecker::checkUp()
 {
-	for (int i = x; i < 9; i++) {
-		if (MapManager::GetInstance()->getmapValue(i, y) == shape) {
-			vec_delete.insert(new Block(x, y, shape));
-		}
-	}
-}
-void patternChecker::checkLeft()
-{
-	for (int i = x; i >= 0; i--) {
-		if (MapManager::GetInstance()->getmapValue(i, y) == shape) {
-			vec_delete.insert(new Block(x, y, shape));
-		}
-	}
-}
-void patternChecker::checkDown()
-{
-	for (int i = y; i < 9; i++) {
+	int count=0;
+	for (int i = y-1; i >= 0; i--) {
 		if (MapManager::GetInstance()->getmapValue(x, i) == shape) {
-			vec_delete.insert(new Block(x, y, shape));
+			vec_delete.push_back(Block(x, i, shape));
+			count++;
 		}
+		else
+			break;
 	}
+	if (count >= 2)
+		return true;
+	return false;
+}
+bool patternChecker::checkRight()
+{
+	int count = 0;
+	for (int i = x+1; i < 10; i++) {
+		if (MapManager::GetInstance()->getmapValue(i, y) == shape) {
+			vec_delete.push_back(Block(i, y, shape));
+			count++;
+		}
+		else
+			break;
+	}
+	if (count >= 2)
+		return true;
+	return false;
+}
+bool patternChecker::checkLeft()
+{
+	int count = 0;
+	for (int i = x-1; i >= 0; i--) {
+		if (MapManager::GetInstance()->getmapValue(i, y) == shape) {
+			vec_delete.push_back(Block(i, y, shape));
+			count++;
+		}
+		else
+			break;
+	}
+	if (count >= 2)
+		return true;
+	return false;
+}
+bool patternChecker::checkDown()
+{
+	int count = 0;
+	for (int i = y+1; i < 10; i++) {
+		if (MapManager::GetInstance()->getmapValue(x, i) == shape) {
+			vec_delete.push_back(Block(x, i, shape));
+			count++;
+		}
+		else
+			break;
+	}
+	if (count >= 2)
+		return true;
+	return false;
+}
+vector<Block> patternChecker::getVector()
+{
+	return vec_delete;
 }

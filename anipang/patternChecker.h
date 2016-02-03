@@ -1,3 +1,6 @@
+#ifndef patternChecker_H
+#define patternChecker_H
+
 #include "MapManager.h"
 #include "Block.h"
 #include <vector>
@@ -6,16 +9,16 @@ class patternChecker {
 
 private:
 	int x, y;
-	int number;
 	char shape;
-	bool check;
+	bool check=false;
 	vector<Block> vec_delete;
 
 public:
-	patternChecker();
-	patternChecker(int x, int y, int shape);
-	void checkLeft();
-	void checkRight();
-	void checkUp();
-	void checkDown();
+	vector<Block> getVector();
+	bool checkPang(int x,int y,char shape);
+	bool checkLeft();
+	bool checkRight();
+	bool checkUp();
+	bool checkDown();
 };
+#endif

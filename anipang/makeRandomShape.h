@@ -1,3 +1,6 @@
+#ifndef makeRandomShape_H
+#define makeRandomShape_H
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -16,3 +19,4 @@ public:
 	char matchingShape(int number);
 	char getShape();
 };
+#endif
