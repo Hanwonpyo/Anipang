@@ -8,7 +8,6 @@
 
 #include "MapManager.h"
 #include "patternChecker.h"
-#include "DeleteBlock.h"
 //#include <turboc.h>
 
 using namespace std;

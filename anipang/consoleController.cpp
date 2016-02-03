@@ -8,11 +8,12 @@ void consoleController::drawScreen()
 {
 	//map °»½Å
 	MapManager::GetInstance()->printMap();
+	this->delay(1500);
+	clrscr();
 	while (MapManager::GetInstance()->hasEmptyBlock()) {
-		cout << endl;
 		MapManager::GetInstance()->shiftBlock();
 		MapManager::GetInstance()->printMap();
-		this->delay(1000);
+		this->delay(1500);
 		clrscr();
 	}
 }
@@ -20,6 +21,7 @@ void consoleController::printInput()
 {
 	MapManager::GetInstance()->printMap();
 	gotoxy(10, 0);
+	cout << endl;
 	cout << "Enter coordinate(x1,y1,x2,y2) : ";
 	cin >> x1 >> y1 >> x2 >> y2;
 	Block a(x1, y1, MapManager::GetInstance()->getmapValue(x1,y1));
@@ -35,7 +37,8 @@ void consoleController::controlMap()
 {
 	MapManager::GetInstance()->swapBlock(x1, y1, x2, y2);
 	MapManager::GetInstance()->printMap();
-	cout << endl;
+	delay(1500);
+	clrscr();
 
 	while (1) {
 		patternChecker p;

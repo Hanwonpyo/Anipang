@@ -88,7 +88,6 @@
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockShift.h" />
     <ClInclude Include="consoleController.h" />
-    <ClInclude Include="DeleteBlock.h" />
     <ClInclude Include="makeRandomShape.h" />
     <ClInclude Include="MapManager.h" />
     <ClInclude Include="patternChecker.h" />
