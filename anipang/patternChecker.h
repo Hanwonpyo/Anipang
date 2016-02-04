@@ -15,7 +15,8 @@ private:
 
 public:
 	vector<Block> getVector();
-	bool checkPang(int x,int y,char shape);
+	bool checkAll();
+	bool checkBlock(int x,int y,char shape);
 	bool checkLeft();
 	bool checkRight();
 	bool checkUp();

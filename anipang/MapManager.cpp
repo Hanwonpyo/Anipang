@@ -27,7 +27,7 @@ void MapManager::makeMap()
 			makeRandomShape random;
 			map[i][j] = random.getShape();
 			patternChecker p;
-			while (p.checkPang(i, j, map[i][j])) {
+			while (p.checkBlock(i, j, map[i][j])) {
 				makeRandomShape random;
 				map[i][j] = random.getShape();
 			}
