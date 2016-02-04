@@ -32,6 +32,14 @@ void consoleController::printInput()
 		cout << "Input Error" << endl;
 
 }
+bool consoleController::timeCheck(time_t start, time_t end)
+{
+	if (end - start >= 30) {
+		cout << "Time Over\n";
+		return true;
+	}
+	return false;
+}
 void consoleController::controlMap()
 {
 	MapManager::GetInstance()->swapBlock(x1, y1, x2, y2);

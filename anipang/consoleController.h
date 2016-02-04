@@ -5,6 +5,7 @@
 #include <Windows.h>
 #include <stdio.h>
 #include <conio.h>
+#include <time.h>
 
 #include "MapManager.h"
 #include "patternChecker.h"
@@ -23,6 +24,7 @@ public:
 	consoleController();
 	void drawScreen();
 	void printInput();
+	bool timeCheck(time_t start, time_t end);
 	void controlMap();
 	void gotoxy(int x, int y);
 	void clrscr(void);
